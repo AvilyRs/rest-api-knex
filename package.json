@@ -1,0 +1,24 @@
+{
+  "name": "rest-api-knex",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "build": "tsc src/server.ts",
+    "lint": "eslint src --ext .ts --fix",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^20.8.6",
+    "fastify": "^4.24.1",
+    "typescript": "^5.2.2"
+  },
+  "devDependencies": {
+    "@as-code/eslint-config": "^1.2.2",
+    "husky": "^8.0.3",
+    "tsx": "^3.13.0"
+  }
+}
