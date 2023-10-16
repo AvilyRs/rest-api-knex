@@ -1,19 +1,19 @@
 import fastify from "fastify";
-import { knex } from "./database";
 
-const appPort = 3333;
+import { knex } from "./database";
+import { env } from "./env";
+
 const app = fastify();
 
-app.get("/users", async () => {
-  const tables = await knex("sqlite_schema").select("*");
-
-  return tables;
+app.get("/transactions", async () => {
+  const transaction = await knex("transactions").select("*");
+  return transaction;
 });
 
 app
   .listen({
-    port: appPort,
+    port: env.PORT,
   })
   .then(() => {
-    console.log(`Server running on http://localhost:${appPort}`);
+    console.log(`Server running on http://localhost:${env.PORT}`);
   });
