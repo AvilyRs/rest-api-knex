@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "tsx watch src/server.ts",
-    "build": "tsc src/server.ts",
+    "build": "tsup src --out-dir build",
     "lint": "eslint src --ext .ts --fix",
     "knex": "node --no-warnings --loader tsx ./node_modules/.bin/knex",
     "test": "vitest"
@@ -27,6 +27,7 @@
     "@types/supertest": "^2.0.15",
     "husky": "^8.0.3",
     "supertest": "^6.3.3",
+    "tsup": "^7.2.0",
     "tsx": "^3.13.0",
     "vitest": "^0.34.6"
   }
