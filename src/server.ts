@@ -1,16 +1,10 @@
-import fastify from "fastify";
-
-const appPort = 3333;
-const app = fastify();
-
-app.get("/users", async () => {
-  return "Users";
-});
+import { env } from "./env";
+import { app } from "./app";
 
 app
   .listen({
-    port: appPort,
+    port: env.PORT,
   })
   .then(() => {
-    console.log(`Server running on http://localhost:${appPort}`);
+    console.log(`Server running on http://localhost:${env.PORT}`);
   });
